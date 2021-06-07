@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in as Regular User!
+                    You are logged in as Administrator!
                 </div>
             </div>
         </div>
