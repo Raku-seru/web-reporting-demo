@@ -1,7 +1,15 @@
 @extends('layouts.app')
 
+@section('title')
+    Report Dashboard
+@endsection
+
+@section('header')
+    <h1>Welcome {{Auth::user()->name}} !</h1>
+@endsection
+
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+Use App\Report;
 
 class HomeController extends Controller
 {
@@ -25,9 +26,11 @@ class HomeController extends Controller
     public function index()
     {
         If(Auth::check() && Auth::user()->is_admin) {
-            return view('adminhome');
+            $report = Report::all();
+            return view('adminhome', compact('report'));
         } else {
-            return view('home');
+            $report = Report::where( 'user_id' == Auth::id() );
+            return view('home', compact('report'));
         }
         
     }
