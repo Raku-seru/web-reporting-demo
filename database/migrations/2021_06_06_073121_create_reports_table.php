@@ -15,9 +15,12 @@ class CreateReportsTable extends Migration
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('remarks');
-            $table->string('images');
             $table->integer('status');
+            $table->string('remarks');
+            $table->string('imageurl_1');
+            $table->string('imageurl_2');
+            $table->string('imageurl_3');
+            $table->string('imageurl_4');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
             
