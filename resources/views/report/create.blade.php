@@ -15,9 +15,9 @@
             <div class="card">
                 <form id="formcreate" name="formcreate" action="/report" method="POST" enctype="multipart/form-data">
                 @csrf
-                <div class="mb-3"> <!--/status form-->
+                <div class="form-group"> <!--/status form-->
                     <div class="col-12">
-                        <label for="status" class="form-label">Report Job Status</label>
+                        <label for="status">Report Job Status</label>
                     </div>
                     <div class="col-12">
                         <div class="form-check form-check-inline">
@@ -39,7 +39,7 @@
                             </div>
                     @enderror
                 </div> <!--/.status form-->
-                <div class="mb-3"> <!--/remarks form-->
+                <div class="form-group"> <!--/remarks form-->
                         <label for="remarks" class="form-label">Job Remarks</label>
                         <input type="text" class="form-control" name="remarks" id="remarks" placeholder="Masukkan Remarks">
                         @error('remarks')
@@ -48,7 +48,7 @@
                             </div>
                         @enderror
                 </div> <!--/.remarks form-->
-                <div class="mb-3"> <!--/upload image 1-->
+                <div class="form-group"> <!--/upload image 1-->
                     <label for="imageurl_1" class="form-label">Upload Location Photo</label>
                     <div class="text-xs text-danger float-right">*Upload image file (JPG, JPEG, PNG)</div>
                         <input type="file" class="form-control" name="imageurl_1" id="imageurl_1" placeholder="*Upload image file (JPG, JPEG, PNG)">
@@ -59,7 +59,7 @@
                         @enderror
                     </div>
                 </div><!--/.upload image 1-->     
-                <div class="mb-3"> <!--/upload image 2-->
+                <div class="form-group"> <!--/upload image 2-->
                     <div class="col-12">
                         <label for="imageurl_2" class="form-label">Upload Job Photo</label>
                         <div class="text-xs text-danger float-right">*Upload image file (JPG, JPEG, PNG)</div>
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                 </div><!--/.upload image 2-->
-                <div class="mb-3"> <!--/upload image 3-->
+                <div class="form-group"> <!--/upload image 3-->
                     <div class="col-12">
                         <label for="imageurl_3" class="form-label">Upload Equipment Photo</label>
                         <div class="text-xs text-danger float-right">*Upload image file (JPG, JPEG, PNG)</div>
@@ -85,7 +85,7 @@
                         </div>
                     </div>
                 </div><!--/.upload image 3-->
-                <div class="mb-3"> <!--/upload image 4-->
+                <div class="form-group"> <!--/upload image 4-->
                     <div class="col-12">
                         <label for="imageurl_4">Upload Equipment Photo</label>
                         <div class="text-xs text-danger float-right">*Upload image file (JPG, JPEG, PNG)</div>

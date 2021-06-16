@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Report;
 use Illuminate\Http\Request;
+use Auth;
 
 class ReportController extends Controller
 {
@@ -38,37 +39,51 @@ class ReportController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-    		'remarks' => 'required',
     		'status' => 'required',
-            'imageurl_1' => 'mimes:jpeg,png,jpg,JPG,PNG',
-            'imageurl_2' => 'mimes:jpeg,png,jpg,JPG,PNG',
-            'imageurl_3' => 'mimes:jpeg,png,jpg,JPG,PNG',
-            'imageurl_4' => 'mimes:jpeg,png,jpg,JPG,PNG',
+            'remarks' => 'required',
+            'imageurl_1' => 'required|mimes:jpeg,png,jpg,JPG,PNG',
+            // 'imageurl_2' => 'mimes:jpeg,png,jpg,JPG,PNG',
+            // 'imageurl_3' => 'mimes:jpeg,png,jpg,JPG,PNG',
+            // 'imageurl_4' => 'mimes:jpeg,png,jpg,JPG,PNG',
     	]);
-            
-        $img1 = $request->imageurl_1;
-        $img2 = $request->imageurl_2;
-        $img3 = $request->imageurl_3;
-        $img4 = $request->imageurl_4;
+
+        $img1 = $request->file('imageurl_1');
+        $img2 = $request->file('imageurl_2');
+        $img3 = $request->file('imageurl_3');
+        $img4 = $request->file('imageurl_4');
+
         $name_img1 = time().' - '.$img1->getClientOriginalName();
-        $name_img2 = time().' - '.$img2->getClientOriginalName();
-        $name_img3 = time().' - '.$img3->getClientOriginalName();
-        $name_img4 = time().' - '.$img4->getClientOriginalName();
+        if($img2 == null) {
+            $name_img2 = 'null';
+        } else {
+            $name_img2 = time().' - '.$img2->getClientOriginalName();
+        };
+        if($img3 == null) {
+            $name_img3 = 'null';
+        } else {
+            $name_img3 = time().' - '.$img3->getClientOriginalName();
+        };
+        if($img4 == null) {
+            $name_img4 = 'null';
+        } else {
+            $name_img4 = time().' - '.$img4->getClientOriginalName();
+        };
 
         Report::create([
-    		'remarks' => $request->remarks,
-    		'imageurl_1' => $request->imageurl_1,
-            'imageurl_2' => $request->imageurl_2,
-            'imageurl_3' => $request->imageurl_3,
-            'imageurl_4' => $request->imageurl_4,
             'status' => $request->status,
+    		'remarks' => $request->remarks,
+    		'imageurl_1' => $name_img1,
+            'imageurl_2' => $name_img2,
+            'imageurl_3' => $name_img3,
+            'imageurl_4' => $name_img4,
             'user_id' => Auth::id()
     	]);
  
         $img1->move('uploads',$name_img1);
-        $img2->move('uploads',$name_img2);
-        $img3->move('uploads',$name_img3);
-        $img4->move('uploads',$name_img4);
+        // $img2->move('uploads',$name_img2);
+        // $img3->move('uploads',$name_img3);
+        // $img4->move('uploads',$name_img4);
+        
     	return redirect('/home');
     }
 

@@ -14,7 +14,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page blur-login">
 <div class="login-box">
   <div class="login-logo">
     <b>Demo</b>Web
@@ -28,7 +28,7 @@
         @csrf
         <!-- Input email -->
         <div class="input-group mb-3">
-          <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Email" required autocomplete="email" autofocus>
+          <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="E-mail Address" required autocomplete="email" autofocus>
 
             @error('email')
               <span class="invalid-feedback" role="alert">
@@ -38,7 +38,7 @@
 
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
+              <span class="fa fa-user"></span>
             </div>
           </div>
         </div>
@@ -59,16 +59,16 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
+          <div class="col-4">
+            <!-- <div class="icheck-primary">
               <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
               <label for="remember">
                 Remember Me
               </label>
-            </div>
+            </div> -->
           </div>
           <!-- /.col -->
-          <div class="col-4">
+          <div class="col-4 d-flex justify-content-end">
             <button type="submit" class="btn btn-primary btn-block">{{ __('Login') }}</button>
           </div>
           <!-- /.col -->
