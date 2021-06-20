@@ -14,17 +14,20 @@ class CreateReportsTable extends Migration
     public function up()
     {
         Schema::create('reports', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('status');
-            $table->string('remarks');
+            $table->bigIncrements('id');            
+            $table->unsignedBigInteger('status');
+            $table->string('remarks')->nullable();
             $table->string('imageurl_1');
-            $table->string('imageurl_2');
-            $table->string('imageurl_3');
-            $table->string('imageurl_4');
+            $table->string('imageurl_2')->nullable();
+            $table->string('imageurl_3')->nullable();
+            $table->string('imageurl_4')->nullable();
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('job_id')->nullable();;
             $table->timestamps();
             
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');;
+            $table->foreign('status')->references('id')->on('statuses')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('job_id')->references('id')->on('jobs')->onDelete('cascade');;
         });
     }
 

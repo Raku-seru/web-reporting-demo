@@ -26,11 +26,13 @@ class HomeController extends Controller
     public function index()
     {
         If(Auth::check() && Auth::user()->is_admin) {
+            $job = Job::all();
             $report = Report::all();
-            return view('adminhome', compact('report'));
+            return view('adminhome', compact('report','job'));
         } else {
+            $job = Job::all();
             $report = Report::where( 'user_id' == Auth::id() );
-            return view('home', compact('report'));
+            return view('home', compact('report','job'));
         }
         
     }
