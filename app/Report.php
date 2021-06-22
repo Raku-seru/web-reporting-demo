@@ -13,4 +13,14 @@ class Report extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public function status()
+    {
+        return $this->hasMany('App\Status');
+    }
+
+    public function getTableColumns()
+    {
+        return $this->getConnection()->getSchemaBuilder()->getColumnListing($this->getTable());
+    }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 Use App\Report;
+Use App\Job;
 
 class HomeController extends Controller
 {
@@ -31,9 +32,8 @@ class HomeController extends Controller
             return view('adminhome', compact('report','job'));
         } else {
             $job = Job::all();
-            $report = Report::where( 'user_id' == Auth::id() );
+            $report = Report::where('user_id' == Auth::id());
             return view('home', compact('report','job'));
         }
-        
     }
 }

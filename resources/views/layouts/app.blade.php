@@ -12,8 +12,9 @@
     <!-- Template style -->
     <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
 
-    <!-- Additional style -->
-    @yield('styles')
+    <!-- Additional style and script-->
+    @yield('hstyles')
+    @yield('hscript')
 
     <!-- jQuery -->
     <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
@@ -22,7 +23,6 @@
     <!-- Template Core -->
     <script src="{{asset('dist/js/adminlte.min.js')}}"></script>
     <!-- Sweet Alert -->
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{asset('plugins/sweetalert2/sweetalert2.min.js')}}"></script>
     <link rel="stylesheet" href="{{asset('plugins/sweetalert2/sweetalert2.min.css')}}">
 
@@ -91,7 +91,7 @@
     </div><!-- ./wrapper -->
     
     <!-- Additional script -->
-    @stack('script')
+    @stack('bscript')
 
 </body>
 </html>

@@ -11,15 +11,14 @@
 @section('content')
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md">
-            <div class="card">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="card py-4 px-5">
                 <form id="formcreate" name="formcreate" action="/report" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group"> <!--/status form-->
-                    <div class="col-12">
-                        <label for="status">Report Job Status</label>
-                    </div>
-                    <div class="col-12">
+                    <label for="status" class="form-label">Report Job Status</label>
+                    <div class="col-md-12">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="status" id="status" value="1">
                             <label class="form-check-label" for="status">Done</label>
@@ -34,69 +33,59 @@
                         </div>
                     </div>
                     @error('status')
-                            <div class="alert alert-danger">
-                                {{ $message }}
-                            </div>
+                            <span class="badge badge-danger">
+                                This field is required.
+                            </span>
                     @enderror
                 </div> <!--/.status form-->
                 <div class="form-group"> <!--/remarks form-->
                         <label for="remarks" class="form-label">Job Remarks</label>
                         <input type="text" class="form-control" name="remarks" id="remarks" placeholder="Masukkan Remarks">
                         @error('remarks')
-                            <div class="alert alert-danger">
-                                {{ $message }}
-                            </div>
+                            <span class="badge badge-danger">
+                                This field is required.
+                            </span>
                         @enderror
                 </div> <!--/.remarks form-->
                 <div class="form-group"> <!--/upload image 1-->
                     <label for="imageurl_1" class="form-label">Upload Location Photo</label>
                     <div class="text-xs text-danger float-right">*Upload image file (JPG, JPEG, PNG)</div>
-                        <input type="file" class="form-control" name="imageurl_1" id="imageurl_1" placeholder="*Upload image file (JPG, JPEG, PNG)">
-                        @error('imageurl_1')
-                                <div class="alert alert-danger">
-                                    {{ $message }}
-                                </div>
-                        @enderror
-                    </div>
+                    <input type="file" class="form-control-file" name="imageurl_1" id="imageurl_1">
+                    @error('imageurl_1')
+                            <span class="badge badge-danger">
+                                This field is required.
+                            </span>
+                    @enderror
                 </div><!--/.upload image 1-->     
                 <div class="form-group"> <!--/upload image 2-->
-                    <div class="col-12">
-                        <label for="imageurl_2" class="form-label">Upload Job Photo</label>
-                        <div class="text-xs text-danger float-right">*Upload image file (JPG, JPEG, PNG)</div>
-                            <input type="file" class="form-control" name="imageurl_2" id="imageurl_2" placeholder="*Upload image file (JPG, JPEG, PNG)">
-                            @error('imageurl_2')
-                                <div class="alert alert-danger">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                    </div>
+                    <label for="imageurl_2" class="form-label">Upload Job Photo</label>
+                    <div class="text-xs text-danger float-right">*Upload image file (JPG, JPEG, PNG)</div>
+                    <input type="file" class="form-control-file" name="imageurl_2" id="imageurl_2">
+                    @error('imageurl_2')
+                        <span class="badge badge-danger">
+                            This field is required.
+                        </span>
+                    @enderror
                 </div><!--/.upload image 2-->
                 <div class="form-group"> <!--/upload image 3-->
-                    <div class="col-12">
-                        <label for="imageurl_3" class="form-label">Upload Equipment Photo</label>
-                        <div class="text-xs text-danger float-right">*Upload image file (JPG, JPEG, PNG)</div>
-                            <input type="file" class="form-control" name="imageurl_3" id="imageurl_3" placeholder="*Upload image file (JPG, JPEG, PNG)">
-                            @error('imageurl_3')
-                                <div class="alert alert-danger">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                    </div>
+                    <label for="imageurl_3" class="form-label">Upload Equipment Photo</label>
+                    <div class="text-xs text-danger float-right">*Upload image file (JPG, JPEG, PNG)</div>
+                    <input type="file" class="form-control-file" name="imageurl_3" id="imageurl_3">
+                    @error('imageurl_3')
+                        <span class="badge badge-danger">
+                            This field is required.
+                        </span>
+                    @enderror
                 </div><!--/.upload image 3-->
                 <div class="form-group"> <!--/upload image 4-->
-                    <div class="col-12">
-                        <label for="imageurl_4">Upload Equipment Photo</label>
-                        <div class="text-xs text-danger float-right">*Upload image file (JPG, JPEG, PNG)</div>
-                            <input type="file" class="form-control" name="imageurl_4" id="imageurl_4" placeholder="*Upload image file (JPG, JPEG, PNG)">
-                            @error('imageurl_4')
-                                <div class="alert alert-danger">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                    </div>
+                    <label for="imageurl_4">Upload Equipment Photo</label>
+                    <div class="text-xs text-danger float-right">*Upload image file (JPG, JPEG, PNG)</div>
+                    <input type="file" class="form-control-file" name="imageurl_4" id="imageurl_4">
+                    @error('imageurl_4')
+                        <span class="badge badge-danger">
+                            This field is required.
+                        </span>
+                    @enderror
                 </div><!--/.upload image 4-->
                 <button id="create" type="submit" class="btn btn-primary">Submit</button>
                 </form>

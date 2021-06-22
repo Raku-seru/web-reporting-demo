@@ -8,6 +8,11 @@ use Auth;
 
 class ReportController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -15,9 +20,17 @@ class ReportController extends Controller
      */
     public function index()
     {
-        $report = Report::all();
-        return view('home',compact('report'));
-
+        If(Auth::check() && Auth::user()->is_admin) {
+            $getreport = new Report;
+            $columns = $getreport->getTableColumns();
+            $report = Report::all();
+            return view('report.index',compact('report','columns'));
+        } else {
+            $getreport = new Report;
+            $columns = $getreport->getTableColumns();
+            $report = Report::where('user_id' == Auth::id());
+            return view('report.index', compact('report','columns'));
+        }
     }
 
     /**
@@ -42,9 +55,9 @@ class ReportController extends Controller
     		'status' => 'required',
             'remarks' => 'required',
             'imageurl_1' => 'required|mimes:jpeg,png,jpg,JPG,PNG',
-            // 'imageurl_2' => 'mimes:jpeg,png,jpg,JPG,PNG',
-            // 'imageurl_3' => 'mimes:jpeg,png,jpg,JPG,PNG',
-            // 'imageurl_4' => 'mimes:jpeg,png,jpg,JPG,PNG',
+            'imageurl_2' => 'nullable|mimes:jpeg,png,jpg,JPG,PNG',
+            'imageurl_3' => 'nullable|mimes:jpeg,png,jpg,JPG,PNG',
+            'imageurl_4' => 'nullable|mimes:jpeg,png,jpg,JPG,PNG',
     	]);
 
         $img1 = $request->file('imageurl_1');
@@ -80,11 +93,23 @@ class ReportController extends Controller
     	]);
  
         $img1->move('uploads',$name_img1);
-        // $img2->move('uploads',$name_img2);
-        // $img3->move('uploads',$name_img3);
-        // $img4->move('uploads',$name_img4);
-        
-    	return redirect('/home');
+        if($img2 == null) {
+            //
+        } else {
+            $img2->move('uploads',$name_img2);
+        };
+        if($img3 == null) {
+            //
+        } else {
+            $img3->move('uploads',$name_img3);
+        };
+        if($img4 == null) {
+            //
+        } else {
+            $img4->move('uploads',$name_img4);
+        };
+
+    	return redirect('/report');
     }
 
     /**
@@ -97,7 +122,6 @@ class ReportController extends Controller
     {
         $report = Report::find($id);
         return view('report.show', compact('report'));
-
     }
 
     /**
@@ -133,6 +157,6 @@ class ReportController extends Controller
     {
         $report = Report::find($id);
         $report->delete();
-        return redirect('/home');
+        return redirect('/report');
     }
 }
