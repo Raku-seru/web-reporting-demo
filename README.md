@@ -1,11 +1,12 @@
-# Demo Web CRUD Reporting with dompdf
+# Demo Web CRUD Reporting with PDF make support
 
-<h2>Repository for Demo Web Application - Admin Dashboard Reporting with dompdf</h2>
-<p>Created on 06-06-2021 by </p> [Raxel AK](https://github.com/Raku-Seru).<br>
+<h2>Repository for Demo Web Application - Admin Dashboard Reporting with PDF maker/dompdf support/h2>
+<p>Created on 06-06-2021 by [Raxel AK] (https://github.com/Raku-Seru).</p>
+<br>
 <hr>
 <em>Last Updated : [23/06/2021 15:38]</em>
 <br>
-<p>Link to Herokuapp : </p><a href="http://evening-falls-47537.herokuapp.com">http://evening-falls-47537.herokuapp.com</a>
+Link to Herokuapp : <a href="http://evening-falls-47537.herokuapp.com">http://evening-falls-47537.herokuapp.com</a>
 <hr>
 
 ## About This Project
@@ -14,10 +15,11 @@
 
 ## <em> Work In Progress : </em>
 <ul>
-<li> Menambah fitur show report</li>
-<li> Membuat fitur pada landing page pada admin user</li>
-<li> Memperbaiki create report view</li>
-<li> Memperbaiki Report Controller & lengkapi fitur edit dan delete</li>
+<li> Menambah fitur show report (optional)</li>
+<li> Progress datatable reports index <em>[Important]</em></li>
+<li> Menambah fitur download report as pdf</li>
+<li> Membuat layout print html untuk pdf</li>
+<li> Optimalisasi file dist agar performa lebih cepat</li>
 </ul>
 <hr>
 
