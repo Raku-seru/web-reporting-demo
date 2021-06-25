@@ -1,6 +1,6 @@
 # Demo Web CRUD Reporting with PDF make support
 
-<h2>Repository for Demo Web Application - Admin Dashboard Reporting with PDF maker/dompdf support/h2>
+<h2>Repository for Demo Web Application - Admin Dashboard Reporting with PDF maker/dompdf support</h2>
 <p>Created on 06-06-2021 by [Raxel AK] (https://github.com/Raku-Seru).</p>
 <br>
 <hr>
