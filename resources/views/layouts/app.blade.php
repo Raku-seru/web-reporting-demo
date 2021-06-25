@@ -13,17 +13,9 @@
     <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
 
     <!-- Additional style and script-->
-    @yield('hstyles')
-    @yield('hscript')
+    @stack('hstyle')
+    @stack('hscript')
 
-    <!-- jQuery -->
-    <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
-    <!-- Bootstrap 4 -->
-    <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <!-- Template Core -->
-    <script src="{{asset('dist/js/adminlte.min.js')}}"></script>
-    <!-- Sweet Alert -->
-    <script src="{{asset('plugins/sweetalert2/sweetalert2.min.js')}}"></script>
     <link rel="stylesheet" href="{{asset('plugins/sweetalert2/sweetalert2.min.css')}}">
 
 </head>
@@ -84,12 +76,20 @@
 
         <footer class="main-footer text-sm">
             <div class="float-right d-none d-sm-block">
-                <b>Version</b> 1.0.2
+                <b>Version</b> 1.0.8
             </div>
-            <strong> Made by <a href="https://github.com/Raku-Seru">Raku-Seru</a></strong> - 2021.
+            <strong> Made by <a href="https://github.com/Raku-Seru">Raxel AK</a></strong> - 2021.
         </footer>
     </div><!-- ./wrapper -->
     
+    <!-- jQuery -->
+    <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
+    <!-- Bootstrap 4 -->
+    <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <!-- Template Core -->
+    <script src="{{asset('dist/js/adminlte.min.js')}}"></script>
+    <!-- Sweet Alert -->
+    <script src="{{asset('plugins/sweetalert2/sweetalert2.min.js')}}"></script>
     <!-- Additional script -->
     @stack('bscript')
 

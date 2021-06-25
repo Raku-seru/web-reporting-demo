@@ -22,14 +22,12 @@ class ReportController extends Controller
     {
         If(Auth::check() && Auth::user()->is_admin) {
             $getreport = new Report;
-            $columns = $getreport->getTableColumns();
             $report = Report::all();
-            return view('report.index',compact('report','columns'));
+            return view('report.index',compact('report'));
         } else {
             $getreport = new Report;
-            $columns = $getreport->getTableColumns();
-            $report = Report::where('user_id' == Auth::id());
-            return view('report.index', compact('report','columns'));
+            $report = Report::where('user_id', Auth::id())->get();
+            return view('report.index', compact('report'));
         }
     }
 
@@ -110,6 +108,14 @@ class ReportController extends Controller
         };
 
     	return redirect('/report');
+    }
+
+    public function getPDF(Request $request, $id){
+        $report = Report::find($id);
+        $pdf = PDF::loadView('report.result', [
+            'report' => $report,
+            ]);
+        return $pdf->stream('result.pdf');              
     }
 
     /**

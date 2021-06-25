@@ -4,7 +4,7 @@
 <p>Created on 06-06-2021 by [Raxel AK] (https://github.com/Raku-Seru).</p>
 <br>
 <hr>
-<em>Last Updated : [23/06/2021 15:38]</em>
+<em>Last Updated : [25/06/2021 21:40]</em>
 <br>
 Link to Herokuapp : <a href="http://evening-falls-47537.herokuapp.com">http://evening-falls-47537.herokuapp.com</a>
 <hr>
@@ -16,7 +16,6 @@ Link to Herokuapp : <a href="http://evening-falls-47537.herokuapp.com">http://ev
 ## <em> Work In Progress : </em>
 <ul>
 <li> Menambah fitur show report (optional)</li>
-<li> Progress datatable reports index <em>[Important]</em></li>
 <li> Menambah fitur download report as pdf</li>
 <li> Membuat layout print html untuk pdf</li>
 <li> Optimalisasi file dist agar performa lebih cepat</li>
@@ -24,6 +23,13 @@ Link to Herokuapp : <a href="http://evening-falls-47537.herokuapp.com">http://ev
 <hr>
 
 ## <em> Past Progress </em>
+
+[up to 25/06/2021 21:40] [ Status : On Development ver 1.0.8b] <em>RaxelAK</em>
+
++ Done pembuatan datatable ke index report
++ Route ke pdf done, view pdf sedang on progress
++ installed dompdf (fungsionalitas on progress)
++ beberapa bugs di view index teratasi
 
 [up to 23/06/2021 15:38] [ Status : On Development ver 1.0.8] <em>RaxelAK</em>
 
