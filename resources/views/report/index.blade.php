@@ -20,7 +20,7 @@
                 <div class="card-header"><strong>List Report</strong></div>
                     <div class="card-body">
                         <a href="/report/create" class="btn btn-outline-primary btn-font-family mb-3" role="button"><i class="fas fa-edit"></i> Create Report</a>
-                        <table id="dtreport" class="table table-hover table-responsive">
+                        <table id="dtreport" class="table table-hover table-responsive-sm">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
@@ -29,7 +29,9 @@
                                     <!-- <th scope="col">Location Image</th> -->
                                     <th scope="col">Author</th>
                                     <th scope="col">Date Created</th>
+                                    @if(Auth::user()->is_admin)
                                     <th scope="col">Option</th>
+                                    @endif
                                 </tr>
                             </thead>
                             <tbody>
@@ -43,7 +45,9 @@
                                         <!-- <td><img src="{{asset('/uploads/'.$val->imageurl_1)}}" width="120" height="120"></td> -->
                                         <td>{{$getname->name}}</td>
                                         <td>{{$val->created_at}}</td>
-                                        <td><a href="#" class="btn btn-primary btn-font-family" role="button"><i class="fas fa-file"></i> PDF</a></td>
+                                        @if(Auth::user()->is_admin)
+                                        <td><a href="/pdf/{{$val->id}}" class="btn btn-primary btn-font-family" role="button"><i class="fas fa-file"></i> PDF</a></td>
+                                        @endif
                                     </tr>
                                 @endforeach
                             </tbody>

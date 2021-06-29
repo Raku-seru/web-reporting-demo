@@ -4,7 +4,7 @@
 <p>Created on 06-06-2021 by [Raxel AK] (https://github.com/Raku-Seru).</p>
 <br>
 <hr>
-<em>Last Updated : [25/06/2021 21:40]</em>
+<em>Last Updated : [29/06/2021 16:55]</em>
 <br>
 Link to Herokuapp : <a href="http://evening-falls-47537.herokuapp.com">http://evening-falls-47537.herokuapp.com</a>
 <hr>
@@ -16,13 +16,18 @@ Link to Herokuapp : <a href="http://evening-falls-47537.herokuapp.com">http://ev
 ## <em> Work In Progress : </em>
 <ul>
 <li> Menambah fitur show report (optional)</li>
-<li> Menambah fitur download report as pdf</li>
-<li> Membuat layout print html untuk pdf</li>
+<li> Session status</li>
 <li> Optimalisasi file dist agar performa lebih cepat</li>
 </ul>
 <hr>
 
 ## <em> Past Progress </em>
+
+[up to 29/06/2021 16:55] [ Status : On Development ver 1.0.9] <em>RaxelAK</em>
+
++ Done menambah CSRF di app.blade.php
++ Done membuat auth token di user dan new user registered
++ Done membuat tombol save PDF (admin only)
 
 [up to 25/06/2021 21:40] [ Status : On Development ver 1.0.8b] <em>RaxelAK</em>
 

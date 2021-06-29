@@ -17,7 +17,7 @@ class CreateReportsTable extends Migration
             $table->bigIncrements('id');            
             $table->unsignedBigInteger('status');
             $table->string('remarks')->nullable();
-            $table->string('imageurl_1');
+            $table->string('imageurl_1')->nullable();
             $table->string('imageurl_2')->nullable();
             $table->string('imageurl_3')->nullable();
             $table->string('imageurl_4')->nullable();

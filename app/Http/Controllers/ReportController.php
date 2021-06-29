@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Report;
 use Illuminate\Http\Request;
 use Auth;
+use PDF;
 
 class ReportController extends Controller
 {
@@ -107,11 +108,11 @@ class ReportController extends Controller
             $img4->move('uploads',$name_img4);
         };
 
-    	return redirect('/report');
+    	return redirect('/report')->with('status');
     }
 
     public function getPDF(Request $request, $id){
-        $report = Report::find($id);
+        $report = Report::where('id', $id)->get();
         $pdf = PDF::loadView('report.result', [
             'report' => $report,
             ]);

@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title')</title>
 
     <!-- Google Font: Source Sans Pro -->
@@ -76,7 +77,7 @@
 
         <footer class="main-footer text-sm">
             <div class="float-right d-none d-sm-block">
-                <b>Version</b> 1.0.8
+                <b>Version</b> 1.0.9
             </div>
             <strong> Made by <a href="https://github.com/Raku-Seru">Raxel AK</a></strong> - 2021.
         </footer>
@@ -91,6 +92,13 @@
     <!-- Sweet Alert -->
     <script src="{{asset('plugins/sweetalert2/sweetalert2.min.js')}}"></script>
     <!-- Additional script -->
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    </script>
     @stack('bscript')
 
 </body>

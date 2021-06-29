@@ -68,7 +68,7 @@
                     @enderror
                 </div><!--/.upload image 2-->
                 <div class="form-group"> <!--/upload image 3-->
-                    <label for="imageurl_3" class="form-label">Upload Equipment Photo</label>
+                    <label for="imageurl_3" class="form-label">Upload Equipment Photo 1</label>
                     <div class="text-xs text-danger float-right">*Upload image file (JPG, JPEG, PNG)</div>
                     <input type="file" class="form-control-file" name="imageurl_3" id="imageurl_3">
                     @error('imageurl_3')
@@ -78,7 +78,7 @@
                     @enderror
                 </div><!--/.upload image 3-->
                 <div class="form-group"> <!--/upload image 4-->
-                    <label for="imageurl_4">Upload Equipment Photo</label>
+                    <label for="imageurl_4" class="form-label">Upload Equipment Photo 2</label>
                     <div class="text-xs text-danger float-right">*Upload image file (JPG, JPEG, PNG)</div>
                     <input type="file" class="form-control-file" name="imageurl_4" id="imageurl_4">
                     @error('imageurl_4')
