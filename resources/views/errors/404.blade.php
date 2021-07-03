@@ -9,21 +9,6 @@
 @endsection
 
 @section('content')
-<script>
-    Swal.fire({
-        title: 'Oops! Page not found',
-        html:  'We could not find the page you were looking for. Meanwhile, you may '+'<a href="/home">return to dashboard</a>'+' or try contact the admin.',
-        icon: 'error',
-        showCloseButton: true,
-        showCancelButton: true,
-        cancelButtonText: 'Close',
-        confirmButtonText: 'Return', 
-        }).then((result) => {
-            if (result.isConfirmed) {
-            window.location.replace('/home')}
-    });
-</script>
-
 <div class="container-fluid">
     <div class="error-page">
         <h2 class="headline text-red"> 404</h2>

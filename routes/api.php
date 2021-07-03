@@ -17,6 +17,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::resource('report', 'ReportControllerAPI');
+
 Route::fallback(function () {
     /** This will check for the 404 view page unders /resources/views/errors/404 route */
     return view('errors.404');

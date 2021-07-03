@@ -108,7 +108,7 @@ class ReportController extends Controller
             $img4->move('uploads',$name_img4);
         };
 
-    	return redirect('/report')->with('status');
+    	return redirect('/report');
     }
 
     public function getPDF(Request $request, $id){
