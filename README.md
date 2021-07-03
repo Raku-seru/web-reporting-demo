@@ -4,7 +4,8 @@
 <p>Created on 06-06-2021 by [Raxel AK] (https://github.com/Raku-Seru).</p>
 <br>
 <hr>
-<em>Last Updated : [29/06/2021 16:55]</em>
+<em>Last Updated : [03/07/2021 21:46]</em>
+<em>Build Version : 1.0.9a 030721</em>
 <br>
 Link to Herokuapp : <a href="http://evening-falls-47537.herokuapp.com">http://evening-falls-47537.herokuapp.com</a>
 <hr>
@@ -22,6 +23,11 @@ Link to Herokuapp : <a href="http://evening-falls-47537.herokuapp.com">http://ev
 <hr>
 
 ## <em> Past Progress </em>
+
+[up to 03/07/2021 21:46] [ Status : Deployed / On Development ver 1.0.9a] <em>RaxelAK</em>
+
++ Done menambah route API / RESTful tested di Postman
++ Done membuat session table/migration (yet implemented in further uses)
 
 [up to 29/06/2021 16:55] [ Status : On Development ver 1.0.9] <em>RaxelAK</em>
 
